@@ -13,26 +13,34 @@ import {
 import Banner from "../../assets/banner.png";
 
 const Home = () => {
-  const [name, setName] = useState("");
-  const [age, setAge] = useState("");
+  
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [age, setAge] = useState("");  
   const [message, setMessage] = useState("");
 
   const registerUser = async (e) => {
     e.preventDefault();
     setMessage("");
 
-    if (!name || !age || !email) {
+    if (!email || !age || !name) {
       setMessage("Por favor, preencha todos os campos.");
       return;
     }
 
     try {
-      await api.post('/usuarios', { name, age, email });
+      const ageAsInt = parseInt(age, 10);
+
+      if (isNaN(ageAsInt) || ageAsInt <= 0) {
+        setMessage("A idade deve ser um número inteiro positivo.");
+        return;
+      }
+      
+      await api.post('/usuarios', { email, age, name });
       setMessage("Usuário cadastrado com sucesso!");
-      setName("");
-      setAge("");
       setEmail("");
+      setAge("");
+      setName("");
     } catch (error) {
       setMessage("Erro ao cadastrar usuário. Por favor, tente novamente.");
       console.error("Erro ao cadastrar usuário:", error);
