@@ -2,15 +2,15 @@ import { useState } from "react";
 import { api } from "../../services/api.js";
 
 import {
-  BannerTtop,
   Container,
   Form,
   InputUser,
-  Label,
-  Button,
+  Label,  
 } from "./styles";
 
-import Banner from "../../assets/banner.png";
+
+import Button from "../../components/button";
+import BannerTtop from "../../components/container/index.jsx";
 
 const Home = () => {
   
@@ -49,10 +49,7 @@ const Home = () => {
     
   return (
     <Container>
-      <BannerTtop>
-        <img src={Banner} alt="Banner" />
-      </BannerTtop>
-
+      <BannerTtop />
       <Form onSubmit={registerUser}>
         <h1>Cadastrar Usuário</h1>
         {message && <p style={{ color: 'white', fontSize: '18px'}}>{message}</p>}

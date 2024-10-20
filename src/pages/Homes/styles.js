@@ -9,21 +9,21 @@ export const Container = styled.div`
   height: 100vh;
 `;
 
-export const BannerTtop = styled.div`
-  background: linear-gradient(to right, #fe7e5d, #7f3841);
-  height: 30vh;
-  width: 50vw;
-  border-radius: 1.875rem;
+// export const BannerTtop = styled.div`
+//   background: linear-gradient(to right, #fe7e5d, #7f3841);
+//   height: 30vh;
+//   width: 50vw;
+//   border-radius: 1.875rem;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
 
-  img {
-    max-width: 100%;
-    max-height: 100%;
-  }
-`;
+//   img {
+//     max-width: 100%;
+//     max-height: 100%;
+//   }
+// `;
 
 export const Form = styled.form`
   display: flex;
@@ -66,22 +66,4 @@ export const Label = styled.label`
         font-weight: 700;
     }
 
-`;
-export const Button = styled.button`
-    border-radius: 1rem;
-    border: 1px solid #ffffff;
-    background: #fe7e5d;
-    width: 18.75rem;
-    padding: 0.625rem;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer; 
-    
-    &:hover {
-        background: #7f3841;
-    }
-
-    &:active {
-        background: #f2f3f4
-    }
 `;
