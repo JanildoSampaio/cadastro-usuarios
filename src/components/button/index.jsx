@@ -1,8 +1,8 @@
 import { Button } from "./styles";
 
-const button = ({children, ...props}) => {
+const button = ({children, theme, ...props}) => {
     return (
-        <Button{...props}>{children}</Button>
+        <Button{...props} theme={theme}>{children}</Button>
     )
 }
 

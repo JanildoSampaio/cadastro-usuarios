@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { api } from "../../services/api.js";
+import { useNavigate } from "react-router-dom";
 
 import {
   Container,
@@ -18,6 +19,7 @@ const Home = () => {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");  
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
   const registerUser = async (e) => {
     e.preventDefault();
@@ -74,8 +76,10 @@ const Home = () => {
           <InputUser type="email" placeholder="Email do Usuário" value={email} onChange={(e) => setEmail(e.target.value)} required/>
         </div>
 
-        <Button type="submit">Cadastrar Usuário</Button>
+        <Button type="submit" theme= "Primary"  >Cadastrar Usuário</Button>
       </Form>
+
+      <Button onClick={()=> navigate("/lista-de-usuarios")}>Ver Lista de Usuários</Button>
     </Container>
   );
 };

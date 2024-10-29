@@ -1,9 +1,9 @@
 import { BannerTtop } from "./styles";
 import BannerImage from "../../assets/banner.png";
 
-const bannerTop = ({ children, ...props }) => {
+const bannerTop = () => {
   return (
-    <BannerTtop {...props}> {children}
+    <BannerTtop>
       <img src={BannerImage} alt="Banner" />
     </BannerTtop>
   );
